@@ -13,5 +13,10 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'body'
+    ];
+
     // protected $table = 'articles'; // ? En el caso de tener una tabla con nombre diferente
 }
