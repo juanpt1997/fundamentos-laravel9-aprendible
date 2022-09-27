@@ -46,6 +46,7 @@ Route::post('/blog', [PostController::class, 'store'])->name('posts.store'); // 
 Route::get('/blog/{post}', [PostController::class, 'show'])->name('posts.show'); // ? Parametros de rutas
 Route::get('/blog/{post}/edit', [PostController::class, 'edit'])->name('posts.edit'); // ? Parametros de rutas
 Route::patch('/blog/{post}', [PostController::class, 'update'])->name('posts.update'); // ? put = reemplazar, patch = actualizar
+Route::delete('/blog/{post}', [PostController::class, 'destroy'])->name('posts.destroy'); // ? put = reemplazar, patch = actualizar
 
 Route::view('/about', 'about')->name('about');
 

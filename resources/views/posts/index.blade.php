@@ -17,7 +17,14 @@
         {{-- <h2><a href="/blog/{{ $post->id }}">{{ $post->title }}</a></h2> --}} {{-- ? Es mejor usar la ruta con nombre --}}
         <h2><a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a></h2>
         &nbsp;
-        <a href="{{ route('posts.edit', $post) }}">Edit</a>
+        <a href="{{ route('posts.edit', $post) }}">Edit</a> &nbsp;
+        {{-- ? Esto no sirve porque me manda por get, necesito crear un formulario para eso --}}
+        {{-- <a href="{{ route('posts.destroy', $post) }}">Delete</a> --}}
+        <form action="{{ route('posts.destroy', $post) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button>
+        </form>
     </div>
     @endforeach
 </x-layouts.app>
