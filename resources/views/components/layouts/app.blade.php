@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel9 - {{ $title ?? '' }}</title>
     <meta name="description" content="{{ $metaDescription ?? 'Default meta description' }}">
+
+    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <x-layouts.nav></x-layouts.nav>
