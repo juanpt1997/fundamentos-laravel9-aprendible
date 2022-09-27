@@ -1,4 +1,4 @@
-$white: #ffff;
+/* $white: #ffff;
 body {
     background-color: red;
 
@@ -9,4 +9,8 @@ body {
     a{
         color:$white;
     }
-}
+} */
+
+$body-bg: #222222;
+$primary: #999999;
+@import 'bootstrap/scss/bootstrap';

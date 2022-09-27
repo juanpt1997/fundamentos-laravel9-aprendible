@@ -1,1 +1,3 @@
-console.log("test 2");
+/* import './bootstrap' */
+import '../css/app.scss'
+import * as bootstrap from 'bootstrap'
