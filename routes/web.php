@@ -69,3 +69,7 @@ Route::view('/about', 'about')->name('about');
 // Route::any('/', function () {
 
 // });
+
+Route::get('/login', function(){
+    return "login page";
+})->name('login');

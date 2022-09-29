@@ -9,6 +9,11 @@ use App\Http\Requests\SavePostRequest;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
     //public function __invoke() // ? Controlador invocable, solo 1 método o acción
     public function index()
     {
