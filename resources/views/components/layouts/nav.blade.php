@@ -46,13 +46,36 @@
                         </a>
                     </div>
                 </div>
+
+                {{-- LINKS DE LA PARTE SUPERIOR DERECHA --}}
                 <div class="ml-auto">
                     <div class="flex space-x-4">
-                        <!-- Active: 'text-sky-600 dark:text-white', Inactive 'text-slate-400' -->
-                        <a href="{{ route('register') }}"
-                            class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('register') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
-                            Register
-                        </a>
+                        @guest
+                            <!-- Active: 'text-sky-600 dark:text-white', Inactive 'text-slate-400' -->
+                            <a href="{{ route('register') }}"
+                                class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('register') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                                Register
+                            </a>
+                            <a href="{{ route('login') }}"
+                                class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('login') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                                Login
+                            </a>
+                        @else
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button
+                                    class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white text-slate-400"
+                                    type="submit">
+                                    Logout
+                                </button>
+                                {{-- ? Esta alternativa también sirve si prefiero tener un link --}}
+                                {{-- <a href="#"
+                                    class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white text-slate-400"
+                                    onclick="this.closest('form').submit()">
+                                    Logout
+                                </a> --}}
+                            </form>
+                        @endguest
                     </div>
                 </div>
             </div>
